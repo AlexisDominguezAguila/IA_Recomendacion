@@ -1,0 +1,158 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/styleIndex.css">
+    <title>Chatbot</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+
+            <img src="../static/img/TEC.png" alt="logo de la Empresa">
+            <h4>Smart <br> Tec</h4>
+        </div>
+
+        <div class="bars">
+            <div class="line"></div>
+            <div class="line"></div>
+
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li class="active"><a href="#">Tienda</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">User</a></a></li>
+                <li> <img src="../static/img/cart.svg" alt=""> </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-content">
+
+
+        <div class="contenedor_products">
+
+            <div class="Buscador">
+                <input type="text" placeholder="Buscar productos..." class="input-buscar">
+                <span class="icon-buscar">
+                    <img src="../static/img/lupa.svg" alt="Buscar">
+                </span>
+            </div>
+            <h3>Nuestros mejores productos</h3>
+            <div class="Productos">
+                <div class="carta">
+                    <div class="imagen">
+                        <img src="../static/img/Lapto Hp i3.jpg" alt="Laptop HP intel Core i5 8GB 512GB 15.6">
+                    </div>
+
+                    <div class="informacion">
+                        <h4>Laptop HP Intel Core i5 8GB 512GB 15.6"</h4>
+                        <p id="stock">¡Solo quedan 5 unidades en stock!</p>
+
+                        <div class="precio">
+                            <p class="prec_inicial">Precio anterior: S/1949.00 </p><span>-35%</span>
+
+                        </div>
+
+                        <h3 id="nuevo_precio">Nuevo precio: S/1266.85</h3>
+
+                        <div class="botones">
+                            <button class="button-58">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="referencia" id="referencia">
+                    <h5>Características:</h5>
+                    <ul>
+                        <li>Procesador: Intel Core i5</li>
+                        <li>Memoria RAM: 8GB</li>
+                        <li>Almacenamiento: 512GB SSD</li>
+                        <li>Pantalla: 15.6 pulgadas</li>
+
+                    </ul>
+
+                    <h5>Descripción:</h5>
+                    <p id="descripcion">
+                        La laptop HP con procesador Intel Core i5, memoria RAM de 8GB y un almacenamiento SSD de 512GB
+                        es perfecta
+                        para realizar tus tareas diarias con eficiencia. Su pantalla de 15.6 pulgadas te ofrece una
+                        experiencia visual
+                        envolvente para disfrutar de tus contenidos multimedia favoritos.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+            <h3>También te puede interesar</h3>
+            <div class="relacionados">
+
+                <div class="card">
+                    <img src="../static/img/Lapto Hp i3.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="../static/img/BS_wweasyshop_10.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="../static/img/Notebook HP 15.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="../static/img/Hp 245 G9.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="../static/img/Notebook-Hp-250-G8-2P5M3Lt.png" alt="">
+                </div>
+
+            </div>
+
+
+        </div>
+           
+        <div class="contenedor_chat">
+            {% if history %}
+            <div class="content-sms" id="contentsSms">
+                {% for entry in history %}
+                
+                <div class="smsUser">
+                    <p>{{ entry.usuario }}</p>   
+                    
+                </div>
+                <div class="smsIA">
+                    <p>{{ entry.bot }}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+            {% endif %}
+            <div class="content-2">
+               
+                <div class="entrada">
+                    <form method="POST">
+                        <input type="text" id="pregunta" name="pregunta" autocomplete="off">
+                        <button type="submit">Enviar</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <script>
+       
+    </script>
+
+    <script src="../static/js/JsIndex.js"></script>
+</body>
+</html>
+{% endblock %}

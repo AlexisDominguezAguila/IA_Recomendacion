@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+} 
+
+
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo h4 {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin: 0;
+}
+
+.bars {
+    display: none;
+}
+
+.nav-bar ul {
+    display: flex;
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: #000000;
+    font-size: 18px;
+    padding: 10px 25px;
+    transition: border-bottom 0.2s;
+    margin: 0 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.active {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+
+.container-content {
+    position: relative;
+    background-color: rgb(226, 240, 240);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding-top: 80px;
+
+}
+
+
+
+.contenedor_products {
+    display: block;
+    width: 80%;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+
+.Buscador {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.input-buscar {
+    flex: 1;
+    padding: 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-image: url('../img/lupa.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px 30px;
+}
+
+.icon-buscar {
+    display: none;
+}
+
+/*diseño 1 de cartas para los productos*/
+
+.Productos {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.referencia {
+
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 40%;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: justify; 
+    hyphens: auto; 
+}
+.referencia {
+    max-height: 200px; 
+    overflow-y: auto; 
+    padding-right: 20px; 
+}
+
+.referencia::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.referencia::-webkit-scrollbar-thumb {
+    background-color: #ccc; 
+    border-radius: 5px; 
+}
+
+.referencia::-webkit-scrollbar-track {
+    background-color: transparent; 
+}
+
+
+.referencia {
+    scrollbar-width: thin; 
+}
+
+.referencia::-webkit-scrollbar-thumb {
+    background-color: #ccc; 
+    border-radius: 5px; 
+}
+
+.referencia h5 {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.referencia ul {
+    
+    padding: 0;
+}
+
+.referencia ul li {
+    margin-bottom: 5px;
+    margin-left: 15px;
+    list-style-type: circle;
+    color: #888;
+}
+
+.referencia p {
+    color: #888;
+    line-height: 1.5;
+}
+
+.carta {
+    flex: 1;
+    display: flex;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    max-height: 200px;
+}
+
+.imagen {
+    flex: 1;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+}
+
+.informacion {
+    flex: 2;
+    padding: 10px;
+}
+
+.informacion h4 {
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+#stock {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.precio {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.precio .prec_inicial {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.precio span {
+    color: #f00;
+    margin-left: 5px;
+}
+
+#nuevo_precio {
+    font-size: 1.2em;
+    color: #009688;
+    margin-bottom: 5px;
+}
+
+.botones {
+    text-align: center;
+}
+
+.button-58 {
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-58:hover {
+    background-color: #00796b;
+}
+ /*estilos de productos relacionados en cartas*/
+.relacionados{
+    display: flex;
+    text-align: center;
+justify-content: center;
+    width: 100%;
+    height: 180px;
+}
+
+.card {
+    width: 190px;
+    height: auto;
+    border-radius: 10px;
+    background: #e0e0e0;
+    overflow: hidden;
+    margin: 0 10px;
+
+  }
+  .card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para el contenedor del chat */
+.contenedor_chat {
+padding-bottom: 60px;
+padding-top: 10px;
+max-width:290px;
+min-width:280px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    background-color: #ffffff;
+}
+.content-sms {
+    flex: 1;
+    overflow-y: scroll;
+
+}
+.content-2 {
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0; /* Color de fondo para visualizarla */
+}
+.smsUser, .smsIA {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+/* Estilos para los mensajes */
+
+.content-sms::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.content-sms::-webkit-scrollbar-thumb {
+    background-color: #ccc; 
+    border-radius: 5px; 
+}
+
+.content-sms::-webkit-scrollbar-track {
+    background-color: transparent; 
+}
+
+
+.content-sms {
+    scrollbar-width: thin; 
+}
+
+.content-sms::-webkit-scrollbar-thumb {
+    background-color: #ccc; 
+    border-radius: 5px; 
+}
+
+
+/* Estilos para los mensajes del chat IA */
+.smsIA {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 0 20px 20px 20px; 
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+}
+
+
+/* Estilos para los mensajes del usuario */
+.smsUser {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 20px 0 20px 20px;
+}
+
+
+
+
+/* Estilos para la entrada de texto */
+.entrada {
+width: 280px;
+    margin: 0;
+    padding: 5px;
+}
+
+.entrada input[type="text"] {
+    width: calc(100% - 70px); 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; 
+}
+
+.entrada button[type="submit"] {
+    width: 60px;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 0 5px 5px 0; 
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 900px) {
+    header {
+        padding: 0px 30px;
+    }
+
+    .bars {
+        z-index: 3;
+        color: #000;
+        display: block;
+        cursor: pointer;
+    }
+
+    .bars .line {
+        width: 40px;
+        height: 10px;
+        color: #000;
+        background-color: #000000;
+        margin: 6px 0px;
+
+    }
+
+    .nav-bar {
+        height: 0px;
+        position: absolute;
+        top: 00px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
+        overflow: hidden;
+
+    }
+
+    .nav-bar.active {
+        height: 400px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+
+        margin-bottom: 20px;
+    }
+
+    .bars .line {
+        width: 30px;
+        height: 3px;
+        background-color: #000000;
+        margin: 6px 0px;
+        transition: 0.2s;
+    }
+
+    .bars.cross .line:nth-child(1) {
+        transform: rotate(-225deg) translate(6px, -6px);
+    }
+
+    .bars.cross .line:nth-child(2) {
+        transform: rotate(225deg);
+    }
+
+    .container-content{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .contenedor_products{
+        width: 100%;
+    }
+    .Buscador{
+        width: 100%;
+    }
+    .Productos{
+        display: block;
+        width: 100%;
+    }
+    .carta{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .referencia{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .relacionados {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-gap: 10px; 
+        margin-top: 10px;
+    }
+    .card{
+
+        margin: 0 0px;
+    }
+
+}
